@@ -21,7 +21,7 @@ const slides = [
 
 ////////////////
 
-function CreateCarousel(ImageDataArray) {
+function CreateCarousel(ImageDataArray, ImageBackgroundColor = null) {
 	/////////////////
 	const ImageElement = document.body.querySelector("#banner .banner-img");
 	const TagLineElement =  document.body.querySelector("#banner p");
@@ -53,6 +53,11 @@ function CreateCarousel(ImageDataArray) {
 		const newDot = document.createElement("div");
 		newDot.classList.add("dot");
 		DotsContainerElement.append(newDot);
+	}
+
+	// set image element background color (optional)
+	if(ImageBackgroundColor !== null) {
+		ImageElement.style.backgroundColor = ImageBackgroundColor;
 	}
 
 	function displayImage(imageIndex) {
@@ -87,4 +92,4 @@ function CreateCarousel(ImageDataArray) {
 	displayImage(currentImageIndex);
 }
 
-CreateCarousel(slides);
+CreateCarousel(slides, "black");
