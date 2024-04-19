@@ -51,7 +51,7 @@ function handleCarouselClick(event) {
     }
 
 	updateCarouselSlide(
-		`/oc-projet-5/assets/images/slideshow/${slides[carouselCurrentSlideIndex].image}`,
+		`assets/images/slideshow/${slides[carouselCurrentSlideIndex].image}`,
 		slides[carouselCurrentSlideIndex].tagLine
 	);
 	
