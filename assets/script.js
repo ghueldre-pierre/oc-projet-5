@@ -19,6 +19,10 @@ const slides = [
 
 //////////////
 
+const SITE_BASE_URL = document.URL.endsWith("index.html") ? document.URL.substring(0, document.URL.lastIndexOf('/')) : document.URL;
+
+//////////////
+
 const carousel = document.querySelector("#banner");
 const carouselBulletPointsContainer = carousel.querySelector(".dots");
 const carouselImageElement = carousel.querySelector(".banner-img");
@@ -31,6 +35,7 @@ let carouselCurrentSlideIndex = carouselFirstSlideIndex;
 let carouselPreviousSlideIndex = carouselFirstSlideIndex;
 
 //////////////
+
 
 function handleCarouselClick(event) {
     if(! event.target.classList.contains("arrow")) return;
@@ -51,7 +56,7 @@ function handleCarouselClick(event) {
     }
 
 	updateCarouselSlide(
-		`assets/images/slideshow/${slides[carouselCurrentSlideIndex].image}`,
+		`${SITE_BASE_URL}/assets/images/slideshow/${slides[carouselCurrentSlideIndex].image}`,
 		slides[carouselCurrentSlideIndex].tagLine
 	);
 	
